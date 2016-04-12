@@ -1,0 +1,27 @@
+@font-face {
+  font-family: Montserrat;
+  src: url(./fonts/Montserrat-Light.otf)
+}
+
+@font-face {
+  font-family: Porcelain;
+  src: url(./fonts/PORCELAIN.TTF)
+}
+
+$header_font: Porcelain;
+$body_font: Montserrat;
+
+#main {
+  width: 90%;
+  margin: 0 auto;
+  font-family: $body_font;
+}
+
+#main img {
+  display: block;
+  margin: 0 auto;
+}
+
+h1, h2 {
+  font-family: $header_font;
+}
