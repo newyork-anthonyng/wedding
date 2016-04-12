@@ -10,18 +10,56 @@
 
 $header_font: Porcelain;
 $body_font: Montserrat;
+$font_color: #E3D89E;
+$background-color: #FFF8F5;
+
+body {
+  background-color: $background-color;
+  font-family: $body_font;
+  color: $font_color;
+}
 
 #main {
   width: 90%;
   margin: 0 auto;
-  font-family: $body_font;
+  height: 100%;
 }
 
 #main img {
   display: block;
   margin: 0 auto;
+  position: relative;
+  top: -1.5em;
+  z-index: -1;
+}
+
+a {
+  text-decoration: none;
+  color: $font_color;
 }
 
 h1, h2 {
   font-family: $header_font;
+  font-weight: normal;
+}
+
+h1 {
+  font-size: 5em;
+  text-align: center;
+  position: relative;
+  display: inline-block;
+
+  span {
+    position: absolute;
+    right: 0;
+  }
+}
+
+h2 {
+  font-size: 2.5em;
+  text-align: right;
+}
+
+#header {
+  text-align: center;
 }

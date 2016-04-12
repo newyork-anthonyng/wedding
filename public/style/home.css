@@ -4,16 +4,45 @@
 @font-face {
   font-family: Porcelain;
   src: url(./fonts/PORCELAIN.TTF); }
+body {
+  background-color: #FFF8F5;
+  font-family: Montserrat;
+  color: #E3D89E; }
+
 #main {
   width: 90%;
   margin: 0 auto;
-  font-family: Montserrat; }
+  height: 100%; }
 
 #main img {
   display: block;
-  margin: 0 auto; }
+  margin: 0 auto;
+  position: relative;
+  top: -1.5em;
+  z-index: -1; }
+
+a {
+  text-decoration: none;
+  color: #E3D89E; }
 
 h1, h2 {
-  font-family: Porcelain; }
+  font-family: Porcelain;
+  font-weight: normal; }
+
+h1 {
+  font-size: 5em;
+  text-align: center;
+  position: relative;
+  display: inline-block; }
+  h1 span {
+    position: absolute;
+    right: 0; }
+
+h2 {
+  font-size: 2.5em;
+  text-align: right; }
+
+#header {
+  text-align: center; }
 
 /*# sourceMappingURL=home.css.map */
