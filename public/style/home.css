@@ -18,12 +18,15 @@ body {
   display: block;
   margin: 0 auto;
   position: relative;
-  top: -1.5em;
-  z-index: -1; }
+  top: -0.5em;
+  z-index: -1;
+  width: 40em; }
 
 a {
   text-decoration: none;
-  color: #E3D89E; }
+  color: #E3D89E;
+  display: inline-block;
+  margin-top: 0.5em; }
 
 h1, h2 {
   font-family: Porcelain;
@@ -33,10 +36,12 @@ h1 {
   font-size: 5em;
   text-align: center;
   position: relative;
-  display: inline-block; }
+  display: inline-block;
+  margin-top: 0.25em; }
   h1 span {
     position: absolute;
-    right: 0; }
+    right: 0;
+    font-size: 0.75em; }
 
 h2 {
   font-size: 2.5em;
@@ -44,5 +49,15 @@ h2 {
 
 #header {
   text-align: center; }
+
+#links {
+  font-size: 1.5em;
+  width: 18em;
+  text-transform: uppercase;
+  margin: 0 auto; }
+  #links div {
+    float: right; }
+    #links div a:first-child {
+      display: block; }
 
 /*# sourceMappingURL=home.css.map */
