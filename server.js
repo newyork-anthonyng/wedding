@@ -12,6 +12,10 @@ app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname + '/public/home.html'));
 });
 
+app.get('/slideshow', (req, res) => {
+  res.sendFile(path.join(__dirname + '/public/slideshow.html'));
+});
+
 const server = app.listen(process.env.PORT || 8000, () => {
   const port = server.address().port;
 
