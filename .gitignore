@@ -2,3 +2,4 @@
 node_modules/*
 public/style/.sass-cache/*
 public/.sass-cache/*
+.sass-cache/*
