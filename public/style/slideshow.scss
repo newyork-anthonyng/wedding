@@ -26,22 +26,6 @@ body {
   font-family: $body_font;
 }
 
-#main img {
-  display: block;
-  margin: 0 auto;
-  position: relative;
-  top: -0.5em;
-  z-index: -1;
-  width: 40em;
-}
-
-a {
-  text-decoration: none;
-  color: $font_color;
-  display: inline-block;
-  margin-top: 0.5em;
-}
-
 h1 {
   font-size: 5em;
   text-align: center;
@@ -50,29 +34,8 @@ h1 {
   margin-top: 0.25em;
   font-family: $header_font;
   font-weight: normal;
-
-  span {
-    position: absolute;
-    right: 0;
-    font-size: 0.75em;
-  }
 }
 
 #header {
   text-align: center;
-}
-
-#links {
-  font-size: 1.5em;
-  width: 18em;
-  text-transform: uppercase;
-  margin: 0 auto;
-
-  div {
-    float: right;
-
-    a:first-child {
-      display: block;
-    }
-  }
 }

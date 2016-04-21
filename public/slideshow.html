@@ -7,13 +7,27 @@
   <meta name="keywords" content="Hao Feng Ou, Feng Xue Ying, Wedding, Slideshow">
   <meta name="author" content="Anthony Ng">
   <link href="./style/reset.css" type="text/css" rel="stylesheet">
-  <link href="./style/home.css" type="text/css" rel="stylesheet">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+  <link href="./style/slideshow.css" type="text/css" rel="stylesheet">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+
+  <style type="text/css">
+    .carousel-inner > .item > img {
+      margin: 0 auto;
+    }
+  </style>
 </head>
 
 <body>
+  <div id="main">
+    <div id="header">
+      <h1>
+        Hao Feng Ou & Feng Xue Ying
+      </h1>
+    </div>
+  </div>
+
   <div id="slideshow" class="carousel slide" data-ride="carousel">
     <!-- Wrapper for Slides -->
     <div class="carousel-inner">
@@ -25,14 +39,14 @@
         <img src="./assets/home.png" alt="Placeholder">
       </div>
     </div>
-
-    <!-- Slideshow Controls -->
-    <a class="left carousel-control" href="#slideshow" role="button" data-slide="prev">
-      Left
-    </a>
-    <a class="right carousel-control" href="#slideshow" role="button" data-slide="next">
-      Right
-    </a>
   </div>
+
+  <script type="text/javascript">
+    $(function() {
+      $('#slideshow').carousel({
+        interval: 4000
+      });
+    });
+  </script>
 </body>
 </html>
