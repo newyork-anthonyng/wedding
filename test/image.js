@@ -1,13 +1,33 @@
 'use strict';
 
+process.env.NODE_ENV = 'test';
+
 const chai = require('chai');
 const should = chai.should();
 const chaiHttp = require('chai-http');
 const server = require('../server');
+const Image = require('../models/image');
 
 chai.use(chaiHttp);
 
 describe('Image API', function() {
+
+  Image.collection.drop();
+
+  beforeEach(function(done) {
+    var newImage = new Image({
+      url: 'www.test.com',
+      date: new Date('1/1/2016')
+    });
+
+    newImage.save(function(err) {
+      done();
+    });
+  });
+  afterEach(function(done) {
+    Image.collection.drop();
+    done();
+  });
 
   it('should get all images on GET /image/all', function(done) {
     chai.request(server)
@@ -26,8 +46,9 @@ describe('Image API', function() {
         res.body.Images.length.should.be.eq(1);
         res.body.Images[0].url.should.be.a('string');
         res.body.Images[0].url.should.be.eq('www.test.com');
-        res.body.Images[0].date.should.be.a('date');
-        res.body.Images[0].date.should.be.eq('1/1/2016');
+        res.body.Images[0].date.should.be.a('string');
+        var dateRegExp = /\d{1,2}\/\d{1,2}\/\d{4}/;
+        dateRegExp.test(res.body.Images[0].date).should.be.true;
 
         done();
       });
