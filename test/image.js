@@ -72,6 +72,4 @@ describe('Image API', function() {
         done();
       });
   });
-
-  it('should upload an image');
 });
