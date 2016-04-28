@@ -11,10 +11,12 @@
 $header_font: Porcelain;
 $body_font: Montserrat;
 $font_color: #E3D89E;
-$background-color: #FFF8F5;
+$background_color: #FFF8F5;
+$break_small: 320px;
+$break_medium: 900px;
 
 body {
-  background-color: $background-color;
+  background-color: $background_color;
   font-family: $body_font;
   color: $font_color;
 }
@@ -24,6 +26,10 @@ body {
   margin: 0 auto;
   height: 100%;
   font-family: $body_font;
+
+  @media (max-width: $break_small), (min-width: $break_small) and (max-width: $break_medium) {
+    width: 100%;
+  }
 }
 
 #main img {
@@ -33,6 +39,12 @@ body {
   top: -0.5em;
   z-index: -1;
   width: 40em;
+
+  @media (max-width: $break_small), (min-width: $break_small) and (max-width: $break_medium) {
+    width: 100%;
+    margin-top: 1.5em;
+    margin-bottom: 1.5em;
+  }
 }
 
 a {
@@ -51,10 +63,23 @@ h1 {
   font-family: $header_font;
   font-weight: normal;
 
+  @media (max-width: $break_small) {
+    font-size: 3em;
+  }
+
+  @media (min-width: $break_small) and (max-width: $break_medium) {
+    font-size: 4em;
+  }
+
   span {
     position: absolute;
     right: 0;
     font-size: 0.75em;
+
+    @media (max-width: $break_small), (min-width: $break_small) and (max-width: $break_medium) {
+      position: static;
+      display: block;
+    }
   }
 }
 
@@ -68,11 +93,21 @@ h1 {
   text-transform: uppercase;
   margin: 0 auto;
 
+  @media (max-width: $break_small), (min-width: $break_small) and (max-width: $break_medium) {
+    text-align: center;
+    width: 100%;
+  }
+
   div {
     float: right;
 
     a:first-child {
       display: block;
+    }
+
+    @media (max-width: $break_small), (min-width: $break_small) and (max-width: $break_medium) {
+      margin-top: 2em;
+      float: none;
     }
   }
 }
