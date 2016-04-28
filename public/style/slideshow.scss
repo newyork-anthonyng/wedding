@@ -12,6 +12,8 @@ $header_font: Porcelain;
 $body_font: Montserrat;
 $font_color: #E3D89E;
 $background-color: #FFF8F5;
+$break_small: 320px;
+$break_medium: 900px;
 
 body {
   background-color: $background-color;
@@ -34,6 +36,11 @@ h1 {
   margin-top: 0.25em;
   font-family: $header_font;
   font-weight: normal;
+
+  @media (max-width: $break_small), (min-width: $break_small) and (max-width: $break_medium) {
+    font-size: 3em;
+    margin: 1em 0;
+  }
 }
 
 #header {
