@@ -9,12 +9,12 @@ var fileUpload = function() {
       method: 'GET',
       dataType: 'json',
       success: function(data) {
-        callback(file, data.signedRequest, data.url);
+        callback(file, data.SignedRequest, data.url);
       }
     });
   }
 
-  function uploadFile(file, signedRequest, url, callback) {
+  function uploadFile(file, signedRequest, url) {
     $.ajax({
       url: signedRequest,
       method: 'PUT',
@@ -25,7 +25,7 @@ var fileUpload = function() {
         xhr.setRequestHeader('x-amz-acl', 'public-read');
       },
       success: function() {
-        callback();
+        console.log('%c Photo successfully uploaded.', 'background-color: red; color: white;');
       }
     });
   }

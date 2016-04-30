@@ -11,6 +11,7 @@
   <link rel="icon" href="./assets/favicon.ico" type="image/x-icon">
   <link href="./style/reset.css" type="text/css" rel="stylesheet">
   <link href="./style/home.css" type="text/css" rel="stylesheet">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
 </head>
 
 <body>
@@ -32,5 +33,21 @@
       </div>
     </div>
   </div>
+
+	<!-- File Upload -->
+	<input type="file" id="upload" />
+
+	<script type="application/javascript" src="./app.js"></script>
+	<script type="application/javascript">
+		$('#upload').on('change', function() {
+			var files = $('#upload').prop('files');
+			var file = files[0];
+			if(file == null) {
+				alert('Please select a file.');
+			} else {
+				fileUpload.getSignedRequest(file, fileUpload.uploadFile);
+			}
+		});
+	</script>
 </body>
 </html>
