@@ -21,6 +21,10 @@ app.get('/slideshow', (req, res) => {
   res.sendFile(path.join(__dirname + '/public/slideshow.html'));
 });
 
+app.get('/album', (req, res) => {
+  res.sendFile(path.join(__dirname + '/public/album.html'));
+});
+
 const server = app.listen(process.env.PORT || 8000, () => {
   const port = server.address().port;
 
