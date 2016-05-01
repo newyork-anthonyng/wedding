@@ -3,9 +3,9 @@
 const config = {};
 
 config['mongoURI'] = {
-  test: process.env.MONGOLAB_URI || 'mongodb://localhost/images-test',
-  development: process.env.MONGOLAB_URI || 'mongodb://localhost/images',
-  production: process.env.MONGOLAB_URI
+  test: process.env.MONGODB_URI || 'mongodb://localhost/images-test',
+  development: process.env.MONGODB_URI || 'mongodb://localhost/images',
+  production: process.env.MONGODB_URI
 };
 
 config['aws_access_key'] = process.env.AWS_ACCESS_KEY;
