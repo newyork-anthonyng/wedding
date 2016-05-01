@@ -40,6 +40,7 @@
 	<script type="application/javascript" src="./app.js"></script>
 	<script type="application/javascript">
 		$('#upload').on('change', function() {
+			console.log('%c File selected.', 'background-color: green; color: white;');
 			var files = $('#upload').prop('files');
 			var file = files[0];
 			if(file == null) {

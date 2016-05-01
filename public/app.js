@@ -2,6 +2,9 @@ var fileUpload = function() {
   'use strict';
 
   function getSignedRequest(file, callback) {
+    console.log('%c Getting signed request.', 'background-color: blue; color: white;');
+    console.log('file:', file);
+
     const myUrl = '/image/sign_s3?file_name=' + file.name + '&file_type=' + file.type;
 
     $.ajax({
@@ -15,6 +18,10 @@ var fileUpload = function() {
   }
 
   function uploadFile(file, signedRequest, url) {
+    console.log('%c Uploading file');
+    console.log('file:', file);
+    console.log('signedRequest:', signedRequest);
+    console.log('url:', url);
     $.ajax({
       url: signedRequest,
       method: 'PUT',
