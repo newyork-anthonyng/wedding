@@ -1,11 +1,10 @@
 var fileUpload = function() {
-  'use strict';
 
   function getSignedRequest(file, callback) {
     console.log('%c Getting signed request.', 'background-color: blue; color: white;');
     console.log('file:', file);
 
-    const myUrl = '/image/sign_s3?file_name=' + file.name + '&file_type=' + file.type;
+    var myUrl = '/image/sign_s3?file_name=' + file.name + '&file_type=' + file.type;
 
     $.ajax({
       url: myUrl,
@@ -23,6 +22,7 @@ var fileUpload = function() {
     console.log('file:', file);
     console.log('signedRequest:', signedRequest);
     console.log('url:', url);
+
     $.ajax({
       url: signedRequest,
       method: 'PUT',
@@ -33,6 +33,7 @@ var fileUpload = function() {
         xhr.setRequestHeader('x-amz-acl', 'public-read');
       },
       success: function() {
+        alert('Photo successfully uploaded.');
         console.log('%c Photo successfully uploaded.', 'background-color: red; color: white;');
       }
     });
