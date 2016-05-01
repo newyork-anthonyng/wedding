@@ -78,6 +78,20 @@ function getSignedS3Request(req, res) {
 }
 
 function uploadImage(req, res) {
+  let url = req.body.url;
+
+  let myImage = new Image({
+    url: url
+  });
+
+  myImage.save((err) => {
+    if(err) throw err;
+
+    res.json({
+      SUCCESS: true,
+      MESSAGE: 'Database updated.',
+    });
+  });
 };
 
 module.exports = router;

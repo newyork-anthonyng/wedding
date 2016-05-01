@@ -72,4 +72,21 @@ describe('Image API', function() {
         done();
       });
   });
+
+  it('should save new image information on POST /image/upload', function(done) {
+    chai.request(server)
+      .post('/image/upload')
+      .send({ url: 'www.test.com' })
+      .end(function(err, res) {
+        res.should.have.a.status(200);
+        res.should.be.json;
+        res.body.should.be.a('object');
+        res.body.should.have.a.property('SUCCESS');
+        res.body.SUCCESS.should.be.true;
+        res.body.should.have.a.property('MESSAGE');
+        res.body.MESSAGE.should.be.eq('Database updated.');
+
+        done();
+      });
+  });
 });
