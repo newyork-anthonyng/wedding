@@ -3,10 +3,13 @@
 const express = require('express');
 const app = express();
 const path = require('path');
+const bodyParser = require('body-parser');
 const logger = require('morgan');
 const imageRoutes = require('./routes/image');
 
 app.use(logger('dev'));
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static('public'));
 app.use('/image', imageRoutes);
 
