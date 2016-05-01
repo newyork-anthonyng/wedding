@@ -1,6 +1,6 @@
 var fileUpload = function() {
 
-  function getSignedRequest(file, callback) {
+  function getSignedRequest(file) {
     console.log('%c Getting signed request.', 'background-color: blue; color: white;');
     console.log('file:', file);
 
@@ -12,12 +12,12 @@ var fileUpload = function() {
       dataType: 'json',
       success: function(data) {
         console.log('data from signed request:', data);
-        callback(file, data.SignedRequest, data.url);
+        uploadFile(file, data.SignedRequest, data.url);
       }
     });
   }
 
-  function uploadFile(file, signedRequest, url, callback) {
+  function uploadFile(file, signedRequest, url) {
     console.log('%c Uploading file', 'background-color: yellow;');
     console.log('file:', file);
     console.log('signedRequest:', signedRequest);
@@ -34,19 +34,22 @@ var fileUpload = function() {
       },
       success: function() {
         console.log('%c Photo successfully uploaded.', 'background-color: red; color: white;');
-        callback();
+        updateDatabase({ url: url });
       }
     });
   }
 
   function updateDatabase(data) {
     console.log('Updating database.');
+    console.log(data);
 
     $.ajax({
       url: '/image/upload',
+      method: 'POST',
       data: data,
       success: function() {
         console.log('%c Database successfully updated.', 'background-color: green; color: white;');
+        $('#upload-text').empty();
       }
     });
   }
