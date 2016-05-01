@@ -35,9 +35,10 @@
   </div>
 
 	<!-- File Upload -->
+	<p id="upload-text"></p>
 	<input type="file" id="upload" />
 
-	<script type="application/javascript" src="./app.js"></script>
+	<script type="application/javascript" src="./fileUpload.js"></script>
 	<script type="application/javascript">
 		$('#upload').on('change', function() {
 			console.log('%c File selected.', 'background-color: green; color: white;');
@@ -47,6 +48,8 @@
 				alert('Please select a file.');
 			} else {
 				fileUpload.getSignedRequest(file, fileUpload.uploadFile);
+
+				$('#upload-text').text('Uploading photo...');
 			}
 		});
 	</script>
