@@ -17,7 +17,7 @@ var fileUpload = function() {
     });
   }
 
-  function uploadFile(file, signedRequest, url) {
+  function uploadFile(file, signedRequest, url, callback) {
     console.log('%c Uploading file', 'background-color: yellow;');
     console.log('file:', file);
     console.log('signedRequest:', signedRequest);
@@ -33,14 +33,27 @@ var fileUpload = function() {
         xhr.setRequestHeader('x-amz-acl', 'public-read');
       },
       success: function() {
-        alert('Photo successfully uploaded.');
         console.log('%c Photo successfully uploaded.', 'background-color: red; color: white;');
+        callback();
+      }
+    });
+  }
+
+  function updateDatabase(data) {
+    console.log('Updating database.');
+
+    $.ajax({
+      url: '/image/upload',
+      data: data,
+      success: function() {
+        console.log('%c Database successfully updated.', 'background-color: green; color: white;');
       }
     });
   }
 
   return {
     getSignedRequest: getSignedRequest,
-    uploadFile: uploadFile
+    uploadFile: uploadFile,
+    updateDatabase: updateDatabase
   };
 }();
