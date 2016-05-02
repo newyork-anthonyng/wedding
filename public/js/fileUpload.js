@@ -49,7 +49,10 @@ var fileUpload = function() {
       data: data,
       success: function() {
         console.log('%c Database successfully updated.', 'background-color: green; color: white;');
+        // clear out upload
         $('#upload-text').empty();
+        var uploadForm = $('form')[0];
+        uploadForm.reset();
       }
     });
   }
