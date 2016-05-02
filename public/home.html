@@ -25,17 +25,18 @@
     <img src="./assets/home.png" alt="Hao Feng Ou and Feng Xue Ying" />
 
     <div id="links">
-      <a href="#" title="Upload a photo">Share</a>
+      <div style="width: 20%; float: left;">
+        <p id="upload-text"></p>
+        <form>
+          <input type="file" id="upload" />
+        </form>
+      </div>
       <div>
         <a href="/album" title="See all photos">Continue To Album</a>
         <a href="/slideshow" title="See slideshow">Start Slideshow</a>
       </div>
     </div>
   </div>
-
-	<!-- File Upload -->
-	<p id="upload-text"></p>
-	<input type="file" id="upload" />
 
 	<script type="application/javascript" src="./js/fileUpload.js"></script>
 	<script type="application/javascript">

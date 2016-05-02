@@ -81,4 +81,17 @@ h1 {
         margin-top: 2em;
         float: none; } }
 
+#upload {
+  color: transparent;
+  font-family: Montserrat;
+  font-size: 24px; }
+
+#upload::-webkit-file-upload-button {
+  visibility: hidden; }
+
+#upload::before {
+  content: 'SHARE';
+  display: inline-block;
+  color: #E3D89E; }
+
 /*# sourceMappingURL=home.css.map */

@@ -111,3 +111,19 @@ h1 {
     }
   }
 }
+
+#upload {
+  color: transparent;
+  font-family: $body_font;
+  font-size: 24px;
+}
+
+#upload::-webkit-file-upload-button {
+  visibility: hidden;
+}
+
+#upload::before {
+  content: 'SHARE';
+  display: inline-block;
+  color: $font_color;
+}
