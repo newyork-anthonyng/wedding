@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": "AAAA,GAAI;EACH,KAAK,EAAE,GAAG;EACV,MAAM,EAAE,EAAE",
+"sources": ["album.scss"],
+"names": [],
+"file": "album.css"
+}
