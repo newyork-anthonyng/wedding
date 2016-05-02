@@ -51,10 +51,11 @@ function getSignedS3Request(req, res) {
     secretAccessKey: AWS_SECRET_KEY
   });
 
+  let newFileName = utility.generateFilePrefix() + req.query.file_name;
   let s3 = new aws.S3();
   let s3_params = {
     Bucket: S3_BUCKET,
-    Key: req.query.file_name,
+    Key: newFileName,
     Expires: 60,
     ContentType: req.query.file_type,
     ACL: 'public-read'
@@ -71,7 +72,7 @@ function getSignedS3Request(req, res) {
         SUCCESS: true,
         MESSAGE: 'Retrieved signed S3 request.',
         SignedRequest: data,
-        url: 'https://' + S3_BUCKET + '.s3.amazonaws.com/' + req.query.file_name
+        url: 'https://' + S3_BUCKET + '.s3.amazonaws.com/' + newFileName
       });
     };
   });
