@@ -51,7 +51,7 @@ function getSignedS3Request(req, res) {
     secretAccessKey: AWS_SECRET_KEY
   });
 
-  let newFileName = utility.generateFilePrefix() + req.query.file_name;
+  let newFileName = utility.generateFilePrefix() + '-' + req.query.file_name;
   let s3 = new aws.S3();
   let s3_params = {
     Bucket: S3_BUCKET,
