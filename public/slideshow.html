@@ -34,21 +34,20 @@
   <div id="slideshow" class="carousel slide" data-ride="carousel">
     <!-- Wrapper for Slides -->
     <div class="carousel-inner">
-      <div class="item active">
-        <img src="./assets/home.png" alt="Placeholder">
-      </div>
-
-      <div class="item">
-        <img src="./assets/home.png" alt="Placeholder">
-      </div>
     </div>
   </div>
 
+  <script src="./js/imageHelper.js"></script>
+
   <script type="text/javascript">
     $(function() {
-      $('#slideshow').carousel({
-        interval: 4000
-      });
+			imageHelper.getAllImages(function(data) {
+				imageHelper.populateSlideshow($('.carousel-inner'), data);
+
+				$('#slideshow').carousel({
+					interval: 4000
+				});
+			});
     });
   </script>
 </body>
