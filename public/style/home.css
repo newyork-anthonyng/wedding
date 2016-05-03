@@ -13,6 +13,7 @@ body {
 	background-color: #FFF8F5;
 	font-family: Montserrat, sans-serif;
 	color: #E3D89E;
+	margin-bottom: 3em;
 }
 
 #header {
@@ -72,7 +73,7 @@ form {
 	font-weight: normal;
 }
 
-/***** Tablet *****/
+/***** Tablet Style *****/
 @media screen and (min-width: 600px) {
 	#header {
 		margin-top: 1.25em;
@@ -100,7 +101,7 @@ form {
 	}
 }
 
-/***** Desktop *****/
+/***** Desktop Style *****/
 @media screen and (min-width: 900px) {
 	h1 {
 		font-size: 4.5em;
@@ -115,6 +116,6 @@ form {
 	}
 
 	img {
-		width: 45em;
+		width: 40em;
 	}
 }

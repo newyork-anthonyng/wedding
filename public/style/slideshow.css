@@ -1,34 +1,39 @@
-@font-face {
-  font-family: Montserrat;
-  src: url(./fonts/Montserrat-Light.otf); }
-@font-face {
-  font-family: Porcelain;
-  src: url(./fonts/PORCELAIN.TTF); }
+/***** Mobile Style *****/
 body {
-  background-color: #FFF8F5;
-  font-family: Montserrat;
-  color: #E3D89E; }
-
-#main {
-  width: 90%;
-  margin: 0 auto;
-  height: 100%;
-  font-family: Montserrat; }
-
-h1 {
-  font-size: 5em;
-  text-align: center;
-  position: relative;
-  display: inline-block;
-  margin-top: 0.25em;
-  font-family: Porcelain;
-  font-weight: normal; }
-  @media (max-width: 320px), (min-width: 320px) and (max-width: 900px) {
-    h1 {
-      font-size: 3em;
-      margin: 1em 0; } }
+	margin-bottom: 0;
+}
 
 #header {
-  text-align: center; }
+	margin-top: 0.5em;
+}
 
-/*# sourceMappingURL=slideshow.css.map */
+/***** Tablet Style *****/
+@media screen and (min-width: 600px) {
+	h1 {
+		font-size: 3em;
+	}
+
+	#break {
+		display: inline-block;
+	}
+
+	#header {
+		margin-top: 1em;
+		margin-bottom: 0.5em;
+	}
+
+	img {
+		width: 100%;
+	}
+}
+
+/***** Desktop Style *****/
+@media screen and (min-width: 900px) {
+	#header {
+		margin: 1em;
+	}
+
+	img {
+		width: 750px;
+	}
+}
