@@ -60,13 +60,13 @@ var fileUpload = function() {
 
 		$('#upload-text').text('Photo uploaded!');
 		setTimeout(function() {
-			$('#upload-text').empty();
+			$('#upload-text').text('\xA0');
 		}, 3000);
 	}
 
 	return {
-	getSignedRequest: getSignedRequest,
-	uploadFile: uploadFile,
-	updateDatabase: updateDatabase
+		getSignedRequest: getSignedRequest,
+		uploadFile: uploadFile,
+		updateDatabase: updateDatabase
 	};
 }();
