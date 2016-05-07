@@ -29,7 +29,7 @@ function getAllImages(req, res) {
   Image.find({}, (err, images) => {
     if(err) throw err;
 
-    var myImages = images.map(function(currentImage) {
+    var myImages = images.reverse().map(function(currentImage) {
       var obj = {};
       obj.url = currentImage.url;
       obj.date = utility.formatTime(new Date(currentImage.date));
