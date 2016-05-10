@@ -59,7 +59,7 @@ form {
 
 #upload {
 	color: transparent;
-	width: 120px;
+	width: 100px;
 	cursor: pointer;
 }
 
@@ -71,7 +71,7 @@ form {
 	content: 'SHARE';
 	color: #E3D89E;
 	font-size: 3em;
-	font-weight: normal;
+	font-weight: 300;
 }
 
 #upload-text {
