@@ -15,7 +15,9 @@ var imageHelper = (function() {
 		var allImages = '';
 
 		for(var i = 0; i < images.length; i++) {
-			var currentImage = '<img src="' + images[i]['url'] + '" onclick="openModal(this);">';
+			var currentImage = '<div class="imgContainer">' +
+				'<img src="' + images[i]['url'] + '" onclick="openModal(this);">' +
+				'</div>';
 			allImages += currentImage;
 		}
 

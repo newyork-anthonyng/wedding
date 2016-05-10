@@ -1,4 +1,8 @@
 /***** Mobile Style *****/
+.imgContainer {
+	float: left;
+}
+
 img {
 	margin: 0.25em 1% 0 1%;
 	width: 98%;
@@ -48,11 +52,9 @@ img {
 		z-index: 2;
 	}
 
-	img {
-		margin-left: 1%;
-		margin-right: 0;
-		width: 48.5%;
-		display: inline-block;
+	.imgContainer {
+		float: left;
+		width: 50%;
 	}
 
 	#album {
@@ -73,7 +75,7 @@ img {
 		margin-top: 1em;
 	}
 
-	img {
-		width: 32%;
+	.imgContainer {
+		width: 33.3%;
 	}
 }
