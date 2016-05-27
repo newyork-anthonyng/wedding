@@ -51,29 +51,6 @@ a {
 	margin-top: 1em;
 }
 
-form {
-	text-align: center;
-	margin-top: 2em;
-	margin-bottom: 3em;
-}
-
-#upload {
-	color: transparent;
-	width: 105px;
-	cursor: pointer;
-}
-
-#upload::-webkit-file-upload-button {
-	visibility: hidden;
-}
-
-#upload::before {
-	content: 'SHARE';
-	color: #E3D89E;
-	font-size: 3em;
-	font-weight: 300;
-}
-
 #upload-text {
 	text-align: center;
 	color: #6781E6;
@@ -96,10 +73,6 @@ form {
 		margin: 0 auto;
 		position: relative;
 		z-index: -1;
-	}
-
-	form {
-		margin-bottom: 0;
 	}
 
 	a {
