@@ -1,11 +1,11 @@
 @font-face {
 	font-family: Montserrat;
-	src: url(./fonts/Montserrat-Light.otf);
+	src: url(../fonts/Montserrat-Light.otf);
 }
 
 @font-face {
 	font-family: Porcelain;
-	src: url(./fonts/PORCELAIN.TTF);
+	src: url(../fonts/PORCELAIN.TTF);
 }
 
 /***** Mobile Style *****/
