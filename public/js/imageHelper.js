@@ -12,17 +12,33 @@ var imageHelper = (function() {
 	}
 
 	function showAllImages(images) {
-		var allImages = '';
+		var $allImages = $('<div>');
 
 		for(var i = 0; i < images.length; i++) {
-			var currentImage = '<div class="imgContainer">' +
-				'<img src="' + images[i]['url'] + '" onclick="openModal(this);">' +
-				'</div>';
-			allImages += currentImage;
+			var $container = $('<div>', {
+				class: 'imgContainer'
+			});
+			var $img = $('<img>', {
+				class: 'lazy',
+				'data-original': images[i]['url']
+			});
+
+			$img.click(function() {
+				openModal(this);
+			});
+
+			$container.append($img);
+			$allImages.append($container);
 		}
 
 		var $album = $('#album');
-		$album.append(allImages);
+		$album.append($allImages);
+
+		window.setTimeout(function() {
+			$('img.lazy').lazyload({
+				effect: 'fadeIn'
+			});
+		}, 1000);
 	}
 
 	function populateSlideshow(carousel, images) {
