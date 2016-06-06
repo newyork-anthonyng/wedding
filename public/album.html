@@ -16,7 +16,7 @@
 	<link href="./style/dist/home.min.css" type="text/css" rel="stylesheet">
 	<link href="./style/dist/album.min.css" type="text/css" rel="stylesheet">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
-	<script src="./js/jquery.lazyload.js"></script>
+	<script src="./js/dist/jquery.lazyload.min.js"></script>
 </head>
 
 <body>
@@ -36,29 +36,6 @@
 		</div>
 	</div>
 
-	<script src="./js/imageHelper.js"></script>
-	<script>
-		imageHelper.getAllImages(imageHelper.showAllImages);
-
-		function openModal(e) {
-			var modal = $('#album-modal');
-			modal.css('display', 'block');
-			$('#album-modal img').attr('src', e.src);
-		}
-
-		$(function() {
-			$('.close').click(function() {
-				var modal = $('#album-modal');
-				modal.css('display', 'none');
-			});
-
-			window.onclick = function(e) {
-				var modal = document.getElementById('album-modal');
-				if(e.target == modal) {
-					modal.style.display = 'none';
-				}
-			}
-		});
-	</script>
+	<script src="./js/dist/imageHelper.min.js"></script>
 </body>
 </html>

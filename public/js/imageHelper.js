@@ -65,3 +65,25 @@ var imageHelper = (function() {
 		populateSlideshow: populateSlideshow
 	}
 })();
+
+imageHelper.getAllImages(imageHelper.showAllImages);
+
+function openModal(e) {
+	var modal = $('#album-modal');
+	modal.css('display', 'block');
+	$('#album-modal img').attr('src', e.src);
+}
+
+$(function() {
+	$('.close').click(function() {
+		var modal = $('#album-modal');
+		modal.css('display', 'none');
+	});
+
+	window.onclick = function(e) {
+		var modal = document.getElementById('album-modal');
+		if(e.target == modal) {
+			modal.style.display = 'none';
+		}
+	}
+});
