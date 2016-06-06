@@ -9,8 +9,18 @@ module.exports = function(grunt) {
 					'public/style/dist/slideshow.min.css': 'public/style/slideshow.css'
 				}
 			}
+		},
+		uglify: {
+			build: {
+				files: {
+					'public/js/dist/fileupload.min.js': 'public/js/fileupload.js',
+					'public/js/dist/imageHelper.min.js': 'public/js/imageHelper.js',
+					'public/js/dist/jquery.lazyload.min.js': 'public/js/jquery.lazyload.js'
+				}
+			}
 		}
 	});
 
 	grunt.loadNpmTasks('grunt-contrib-cssmin');
+	grunt.loadNpmTasks('grunt-contrib-uglify');
 };
