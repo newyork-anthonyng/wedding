@@ -70,3 +70,18 @@ var fileUpload = function() {
 		updateDatabase: updateDatabase
 	};
 }();
+
+$(function() {
+		$('#upload').on('change', function() {
+			console.log('%c File selected.', 'background-color: green; color: white;');
+			var files = $('#upload').prop('files');
+			var file = files[0];
+			if(file == null) {
+				alert('Please select a file.');
+			} else {
+				fileUpload.getSignedRequest(file, fileUpload.uploadFile);
+
+				$('#upload-text').text('Uploading photo...');
+			}
+		});
+});
