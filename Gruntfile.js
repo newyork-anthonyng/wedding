@@ -13,7 +13,7 @@ module.exports = function(grunt) {
 		uglify: {
 			build: {
 				files: {
-					'public/js/dist/fileupload.min.js': 'public/js/fileupload.js',
+					'public/js/dist/fileUpload.min.js': 'public/js/fileUpload.js',
 					'public/js/dist/imageHelper.min.js': 'public/js/imageHelper.js',
 					'public/js/dist/jquery.lazyload.min.js': 'public/js/jquery.lazyload.js'
 				}
@@ -23,4 +23,6 @@ module.exports = function(grunt) {
 
 	grunt.loadNpmTasks('grunt-contrib-cssmin');
 	grunt.loadNpmTasks('grunt-contrib-uglify');
+
+	grunt.registerTask('production', ['cssmin', 'uglify']);
 };
