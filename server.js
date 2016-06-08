@@ -25,6 +25,10 @@ app.get('/album', (req, res) => {
   res.sendFile(path.join(__dirname + '/public/album.html'));
 });
 
+app.all('*', (req, res) => {
+	res.redirect('/');
+});
+
 const server = app.listen(process.env.PORT || 8000, () => {
   const port = server.address().port;
 
