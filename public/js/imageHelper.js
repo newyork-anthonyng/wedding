@@ -34,11 +34,13 @@ var imageHelper = (function() {
 		var $album = $('#album');
 		$album.append($allImages);
 
-		window.setTimeout(function() {
-			$('img.lazy').lazyload({
-				effect: 'fadeIn'
-			});
-		}, 1000);
+		if(typeof $().lazyload !== 'undefined') {
+			window.setTimeout(function() {
+				$('img.lazy').lazyload({
+					effect: 'fadeIn'
+				});
+			}, 1000);
+		}
 	}
 
 	function populateSlideshow(carousel, images) {
