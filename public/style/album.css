@@ -5,6 +5,7 @@
 
 img {
 	margin: 0.25em 1% 0 1%;
+	image-orientation: from-image;
 	width: 98%;
 }
 
