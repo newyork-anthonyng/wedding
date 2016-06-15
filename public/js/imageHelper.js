@@ -1,4 +1,6 @@
 var imageHelper = (function() {
+	var currentImages;
+	var intervalTime = 5 * (60000);
 
 	function getAllImages(callback) {
 		$.ajax({
@@ -12,6 +14,17 @@ var imageHelper = (function() {
 	}
 
 	function showAllImages(images) {
+		// check if new images have been uploaded
+		currentImages = images.length;
+		window.setInterval(function() {
+			getAllImages(function(msg) {
+				console.log('retrieving images');
+				if(currentImages !== msg.length) {
+					location.reload();
+				}
+			});
+		}, intervalTime);
+
 		var $allImages = $('<div>');
 
 		for(var i = 0; i < images.length; i++) {
