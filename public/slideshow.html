@@ -46,6 +46,7 @@
 	<script type="text/javascript">
 		$(function() {
 			imageHelper.getAllImages(function(data) {
+				imageHelper.setInterval(data);
 				imageHelper.populateSlideshow($('.carousel-inner'), data);
 
 				$('#slideshow').carousel({

@@ -13,8 +13,7 @@ var imageHelper = (function() {
 		});
 	}
 
-	function showAllImages(images) {
-		// check if new images have been uploaded
+	function setInterval(images) {
 		currentImages = images.length;
 		window.setInterval(function() {
 			getAllImages(function(msg) {
@@ -24,6 +23,11 @@ var imageHelper = (function() {
 				}
 			});
 		}, intervalTime);
+	}
+
+	function showAllImages(images) {
+		// check if new images have been uploaded
+		setInterval(images);
 
 		var $allImages = $('<div>');
 
@@ -77,7 +81,8 @@ var imageHelper = (function() {
 	return {
 		getAllImages: getAllImages,
 		showAllImages: showAllImages,
-		populateSlideshow: populateSlideshow
+		populateSlideshow: populateSlideshow,
+		setInterval: setInterval
 	}
 })();
 
